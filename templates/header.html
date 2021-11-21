@@ -35,7 +35,7 @@
           </div> -->
         </li>
           <li class="nav-item"><a href="{% url 'contact'  %}" class="nav-link">Contact Us</a></li>
-          <li class="nav-item cta cta-colored"><a href="{% url 'cart'  %}" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
+          <li class="nav-item cta cta-colored"><a href="{% url 'cart'  %}" class="nav-link"><span class="icon-shopping_cart"></span>{{cart.get_total_product}}</a></li>
 
         </ul>
       </div>

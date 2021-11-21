@@ -13,6 +13,14 @@ class Home(ListView):
     context_object_name = 'product'
     paginate_by = 20
 
+    def get_queryset(self,*args,**kwargs):
+        name = self.request.GET.get('search')
+        object_list = self.model.objects.all()
+        print(object_list)
+        if name:
+            object_list = object_list.filter(name__icontains=name)
+        return object_list
+
 class Contact(TemplateView):
     template_name = 'contact.html'
     

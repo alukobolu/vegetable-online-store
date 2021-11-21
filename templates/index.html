@@ -41,7 +41,10 @@
 
     <section class="ftco-section">
     	<div class="container">
-			
+			<form action="{% url 'home' %}" method="get" class="row px-1 form-group" >
+				<input type="text" name="search" class="col-7 col-sm-9 col-md-10 col-lg-10 form-control" placeholder="Search..">
+				<input type="submit" class="btn btn-primary py-3 " value="Search">
+			</form>
 			{% if messages %}
 				{% for message in messages %}
 					<div class="alert">
@@ -49,7 +52,7 @@
 						{{ message }}
 					</div>	
 				{% endfor %}
-			{% endif %}
+			{% endif %}	
     		<div class="row">
 				{% if product %}
 				{% for obj in product %}
