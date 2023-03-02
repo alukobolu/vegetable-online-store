@@ -7,11 +7,11 @@
                 <div class="row d-flex">
                     <div class="col-md pr-4 d-flex topper align-items-center">
                         <div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
-                        <span class="text">+ 234 803 4775 858</span>
+                        <span class="text">+ 234 706 508 899</span>
                     </div>
                     <div class="col-md pr-4 d-flex topper align-items-center">
                         <div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
-                        <span class="text">>Mr Ife@email.com</span>
+                        <span class="text">pythongroup7@email.com</span>
                     </div>
                 </div>
             </div>
@@ -20,14 +20,15 @@
 </div>
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
-      <a class="navbar-brand" href="{% url 'home'  %}">>Mr Ife</a>
+      <a class="navbar-brand" href="{% url 'home'  %}">Python Group 7 Restaurant</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="oi oi-menu"></span> Menu
       </button>
 
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active"><a href="{% url 'home'  %}" class="nav-link">Home</a></li>
+          <li class="nav-item active"><a href="{% url 'home'  %}" class="nav-link">Welcome, {% if request.user.first_name  or request.user.last_name %} {{ request.user.first_name }}
+            {{ request.user.last_name }} {% else %} {{ request.user.username }} {% endif %}</a></li>
           <li class="nav-item dropdown">
           <!-- <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
           <div class="dropdown-menu" aria-labelledby="dropdown04">
@@ -36,6 +37,7 @@
         </li>
           <li class="nav-item"><a href="{% url 'contact'  %}" class="nav-link">Contact Us</a></li>
           <li class="nav-item cta cta-colored"><a href="{% url 'cart'  %}" class="nav-link"><span class="icon-shopping_cart"></span>{{cart.get_total_product}}</a></li>
+          <li class="nav-item"><a href="{% url 'logout'  %}" class="nav-link">Logout</a></li>
 
         </ul>
       </div>
